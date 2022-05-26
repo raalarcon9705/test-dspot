@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
+import { UsersStoreService } from 'src/app/store/users';
 
 @Component({
   selector: 'app-user-details',
@@ -8,19 +9,17 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./user-details.component.scss']
 })
 export class UserDetailsComponent implements OnInit {
-  user$ = this.usersService.selectedUser$;
+  user$ = this._usersStoreService.selected$;
 
-  constructor(private usersService: UsersService, private route: ActivatedRoute) { }
+  constructor(private _usersStoreService: UsersStoreService, private _route: ActivatedRoute) { }
 
   ngOnInit() {
     this.loadUserDetails();
   }
 
   loadUserDetails() {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id) {
-      this.usersService.getUserDetails(+id);
-    }
+    const id = this._route.snapshot.paramMap.get('id') || '';
+    this._usersStoreService.loadUser(+id)
   }
 
 }

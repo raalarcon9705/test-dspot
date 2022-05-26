@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from 'src/app/services/users.service';
+import { UsersStoreService } from 'src/app/store/users';
 
 @Component({
   selector: 'app-users-list',
@@ -8,16 +8,17 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class UsersListComponent implements OnInit {
 
-  users$ = this.usersService.users$;
+  users$ = this._usersStoreService.all$;
+  lading$ = this._usersStoreService.loading$;
 
-  constructor(private usersService: UsersService) { }
+  constructor(private _usersStoreService: UsersStoreService) { }
 
   ngOnInit() {
     this.loadUsers();
   }
 
   loadUsers() {
-    this.usersService.getUsers();
+    this._usersStoreService.loadUsers();
   }
 
 }
