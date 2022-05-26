@@ -1,0 +1,10 @@
+<div class="gallery">
+  <div class="photo" *ngFor="let photo of photos" (click)="onSelectPhoto(photo)">
+    <app-image [src]="photo" [width]="136" [height]="136"></app-image>
+  </div>
+</div>
+
+<div class="selected-image" *ngIf="selected">
+  <img [src]="selected" alt="">
+  <button class="btn-close" (click)="onClose()">×</button>
+</div>

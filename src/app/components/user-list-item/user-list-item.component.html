@@ -1,18 +1,16 @@
 <div class="user-item">
-  <div class="user-avatar">
-    <img [src]="user.img" alt="">
-  </div>
+  <app-avatar [src]="user.img"></app-avatar>
   <div class="user-info">
     <div class="full-name">
       {{ user.first_name }} {{ user.last_name }}
     </div>
-    <ul class="statuses">
-      <li *ngFor="let status of user.statuses">
-        {{ status }}
-      </li>
-    </ul>
+
+    <!-- TODO Add routerLink or href and remove $event.preventDefault() -->
+    <a class="status" href="#" (click)="$event.preventDefault()">
+      {{ user.status }}
+    </a>
   </div>
   <div class="options">
-    <app-button>Details</app-button>
+    <app-button [routerLink]="['/users', user.id]">Details</app-button>
   </div>
 </div>

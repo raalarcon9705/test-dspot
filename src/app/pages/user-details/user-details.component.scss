@@ -1,0 +1,36 @@
+.profile {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 60px;
+}
+
+.title {
+  margin-top: 23px;
+}
+
+.status {
+  display: block;
+}
+
+.profile-sections {
+  margin-top: 30px;
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.label {
+  font-weight: 500;
+  color: #b1b9db;
+}
+
+.bio {
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+
+.data-row {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 10px 0;
+}

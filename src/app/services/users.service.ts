@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, map, withLatestFrom } from 'rxjs';
+import { BehaviorSubject, combineLatest, map, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { User } from '../interface/user';
 
@@ -26,16 +26,14 @@ export class UsersService {
   }
 
   get selectedUser$() {
-    return this._selectedId$.pipe(
-      withLatestFrom(this._users$),
+    return combineLatest([this._selectedId$, this._users$]).pipe(
       map(([id, users]) => {
         if (!id) {
           return undefined;
         }
-
-        return users.find(user => user.id === id);
-      })
-    )
+        return users.find((user: User) => user.id === id);
+      }),
+    );
   }
 
   constructor(private http: HttpClient) {}
@@ -61,21 +59,18 @@ export class UsersService {
 
   getUserDetails(id: number) {
     this._loading$.next(true);
-    this._selectedId$.next(id);
-
-    return this.http
-      .get<User>(`${environment.api}/friends/${id}`)
-      .subscribe({
-        next: (user) => {
-          const users = this._users$.value;
-          users.push(user);
-          this._users$.next(users);
-          this._loading$.next(false);
-        },
-        error: (error) => {
-          this._loading$.next(false);
-          this._error$.next(error);
-        },
-      });
+    return this.http.get<User>(`${environment.api}/friends/id`).subscribe({
+      next: (user) => {
+        const users = this._users$.value;
+        this._selectedId$.next(user.id);
+        users.push(user);
+        this._users$.next(users);
+        this._loading$.next(false);
+      },
+      error: (error) => {
+        this._loading$.next(false);
+        this._error$.next(error);
+      },
+    });
   }
 }

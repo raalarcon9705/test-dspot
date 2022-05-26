@@ -1,29 +1,17 @@
 .user-item {
-  display:  flex;
+  display: flex;
   margin-bottom: 14px;
-  background: #FFFFFF;
-  box-shadow: 0px 10px 20px rgba(204, 208, 223, 0.5);
+  background: #ffffff;
+  box-shadow: var(--shadow);
   border-radius: 8px;
   padding: 14px;
-}
-
-.user-avatar {
-  background-color: #c6c6c6;
-  border-radius: 4px;
-  overflow: hidden;
-  margin-right: 14px;
-
-  img {
-    width: 100%;
-    width: 60px;
-    height: 60px;
-  }
 }
 
 .user-info {
   flex: 1;
   display: flex;
-  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .full-name {
@@ -31,4 +19,11 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
+  margin-bottom: 4px;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

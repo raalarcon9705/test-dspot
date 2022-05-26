@@ -1,3 +1,54 @@
-<p>
-  user-details works!
-</p>
+<ng-container *ngIf="user$|async as user">
+  <div class="profile">
+    <app-avatar [src]="user.img" [width]="150" [height]="150"></app-avatar>
+
+    <h1 class="title">{{ user.first_name }} {{ user.last_name }}</h1>
+
+    <a href="#" class="status">{{ user.status || user.statuses?.[0] }}</a>
+
+    <div class="profile-sections">
+      <app-tabset>
+        <app-tab title="Info">
+          <div class="label">Bio:</div>
+          <p class="bio">{{ user.bio }}</p>
+
+          <hr>
+
+          <div class="data-row">
+            <div class="label">Phone:</div>
+            <div>{{ user.phone }}</div>
+          </div>
+
+          <hr>
+
+          <div class="data-row">
+            <div class="label">Address:</div>
+            <div>{{ user.address_1 }}</div>
+          </div>
+          <div class="data-row">
+            <div class="label">City:</div>
+            <div>{{ user.city }}</div>
+          </div>
+          <div class="data-row">
+            <div class="label">State:</div>
+            <div>{{ user.state }}</div>
+          </div>
+          <div class="data-row">
+            <div class="label">Zipcode:</div>
+            <div>{{ user.zipcode }}</div>
+          </div>
+          <div class="data-row">
+            <div class="label">Address:</div>
+            <div>{{ user.address_1 }}</div>
+          </div>
+        </app-tab>
+
+
+        <app-tab title="Photos">
+          <app-gallery [photos]="user.photos"></app-gallery>
+        </app-tab>
+      </app-tabset>
+    </div>
+  </div>
+
+</ng-container>

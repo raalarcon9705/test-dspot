@@ -1,0 +1,17 @@
+.avatar {
+  margin-right: 14px;
+  position: relative;
+
+  &.online::before {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    content: ' ';
+    top: -6px;
+    left: -6px;
+
+    background: #16ba44;
+    border: 2px solid #ffffff;
+  }
+}

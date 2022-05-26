@@ -1,0 +1,16 @@
+.img-container {
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #c6c6c6;
+  width: fit-content;
+
+  img {
+    width: var(--width, 100%);
+    height: var(--height, 100%);
+    display: block;
+  }
+}
+
+:host {
+  display: inline-block;
+}

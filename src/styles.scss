@@ -1,12 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./sass/variables.scss";
 
 :root {
-  --primary: #2E57FA;
-  --on-primary: #ffffff;
+  --primary: #{$primary};
+  --on-primary: #{$onPrimary};
+
+  --bg-color: #{bgColor};
+
+  --shadow: #{$shadow};
 }
 
-:root,html,body {
-  background-color: rgba(255, 255, 255, 0.5);
+:root,
+html,
+body {
+  background-color: var(--bg-color);
 }
 
 * {
@@ -14,22 +21,53 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: "Inter", sans-serif;
+}
 
 .container {
   max-width: 714px;
   margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .text-muted {
-  color: #B1B9DB !important;
+  color: #b1b9db !important;
 }
 
-
 .title {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 700;
   font-size: 26px;
   line-height: 24px;
   margin-bottom: 24px;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+button:hover,
+[role="button"]:hover {
+  cursor: pointer;
+}
+
+.status {
+  color: #b1b9db;
+  border: 1px solid #b1b9db;
+  border-radius: 20px;
+  min-height: 24px;
+  padding: 0 8px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 24px;
+  width: fit-content;
+  display: inline-block;
+}
+
+hr {
+  border-top: 1px solid rgba(177, 185, 219, 0.5);
+  margin: 22px 0;
 }
