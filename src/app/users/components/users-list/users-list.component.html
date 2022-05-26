@@ -1,7 +1,7 @@
 <h1 class="text-muted title">Friends</h1>
 
 <ul class="users-list">
-  <li *ngFor="let user of users$|async">
+  <li *ngFor="let user of users">
     <app-user-list-item [user]="user"></app-user-list-item>
   </li>
 </ul>
