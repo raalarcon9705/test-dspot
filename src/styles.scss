@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --primary: #2E57FA;
+  --on-primary: #ffffff;
+}
+
+:root,html,body {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.container {
+  max-width: 714px;
+  margin: 0 auto;
+}
+
+.text-muted {
+  color: #B1B9DB !important;
+}
+
+
+.title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 24px;
+  margin-bottom: 24px;
+}

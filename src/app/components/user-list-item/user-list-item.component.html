@@ -1,0 +1,18 @@
+<div class="user-item">
+  <div class="user-avatar">
+    <img [src]="user.img" alt="">
+  </div>
+  <div class="user-info">
+    <div class="full-name">
+      {{ user.first_name }} {{ user.last_name }}
+    </div>
+    <ul class="statuses">
+      <li *ngFor="let status of user.statuses">
+        {{ status }}
+      </li>
+    </ul>
+  </div>
+  <div class="options">
+    <app-button>Details</app-button>
+  </div>
+</div>
