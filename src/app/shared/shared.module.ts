@@ -8,6 +8,7 @@ import { TabComponent } from './components/tab/tab.component';
 import { TabsetComponent } from './components/tabset/tabset.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { RouterModule } from '@angular/router';
+import { BackwardDirective } from './directives/backward.directive';
 
 const SHARED_COMPONENTS = [
   AvatarComponent,
@@ -19,11 +20,16 @@ const SHARED_COMPONENTS = [
   SpinnerComponent
 ];
 
+const SHARED_DIRECTIVES = [
+  BackwardDirective
+];
+
 const SHARED_MODULES = [CommonModule];
 
 @NgModule({
   declarations: [
     ...SHARED_COMPONENTS,
+    ...SHARED_DIRECTIVES,
   ],
   imports: [
     ...SHARED_MODULES,
@@ -31,6 +37,7 @@ const SHARED_MODULES = [CommonModule];
   ],
   exports: [
     ...SHARED_COMPONENTS,
+    ...SHARED_DIRECTIVES,
     ...SHARED_MODULES
   ]
 })

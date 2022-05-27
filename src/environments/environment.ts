@@ -4,7 +4,11 @@
 
 export const environment = {
   production: false,
-  api: 'http://private-5bdb3-friendmock.apiary-mock.com'
+  api: 'http://private-5bdb3-friendmock.apiary-mock.com',
+  cookies: {
+    jwt: 'JWT',
+    jwtRefresh: 'JWT_REFRESH'
+  }
 };
 
 /*

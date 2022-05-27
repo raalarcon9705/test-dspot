@@ -11,7 +11,7 @@ import { AppStoreModule } from './store';
     AppComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     CoreModule,
     AppStoreModule
