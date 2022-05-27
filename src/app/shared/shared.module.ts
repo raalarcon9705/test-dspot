@@ -7,6 +7,7 @@ import { ImageComponent } from './components/image/image.component';
 import { TabComponent } from './components/tab/tab.component';
 import { TabsetComponent } from './components/tabset/tabset.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { RouterModule } from '@angular/router';
 
 const SHARED_COMPONENTS = [
   AvatarComponent,
@@ -25,7 +26,8 @@ const SHARED_MODULES = [CommonModule];
     ...SHARED_COMPONENTS,
   ],
   imports: [
-    ...SHARED_MODULES
+    ...SHARED_MODULES,
+    RouterModule
   ],
   exports: [
     ...SHARED_COMPONENTS,

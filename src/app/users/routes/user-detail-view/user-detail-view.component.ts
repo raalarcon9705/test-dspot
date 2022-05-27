@@ -8,6 +8,7 @@ import { UsersStoreService } from 'src/app/store/users';
 })
 export class UserDetailViewComponent implements OnInit {
   user$ = this._usersStoreService.selected$;
+  loading$ = this._usersStoreService.loading$;
 
   constructor(
     private _usersStoreService: UsersStoreService,

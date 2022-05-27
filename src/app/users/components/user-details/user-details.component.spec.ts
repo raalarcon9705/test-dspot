@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { UserDetailsComponent } from './user-details.component';
+import { CoreModule } from 'src/app/core';
+import { AppStoreModule } from 'src/app/store';
 
 describe('UserDetailsComponent', () => {
   let component: UserDetailsComponent;
@@ -11,7 +13,8 @@ describe('UserDetailsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserDetailsComponent ]
+      declarations: [ UserDetailsComponent ],
+      imports: [CoreModule, AppStoreModule]
     })
     .compileComponents();
   }));
@@ -22,7 +25,4 @@ describe('UserDetailsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });

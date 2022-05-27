@@ -1,3 +1,15 @@
-<button [ngClass]="{primary: primary}">
+<ng-template #children>
   <ng-content></ng-content>
-</button>
+</ng-template>
+
+<ng-container *ngIf="routerLink; else buttonTemplate">
+  <a [routerLink]="routerLink" class="button" [ngClass]="{primary: primary}">
+    <ng-template [ngTemplateOutlet]="children"></ng-template>
+  </a>
+</ng-container>
+
+<ng-template #buttonTemplate>
+  <button class="button" [ngClass]="{primary: primary}">
+    <ng-template [ngTemplateOutlet]="children"></ng-template>
+  </button>
+</ng-template>

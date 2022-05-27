@@ -8,6 +8,7 @@ import { User } from 'src/app/interface/user';
 })
 export class UserDetailsComponent implements OnInit {
   @Input() user!: User | null;
+  @Input() loading?: boolean;
 
   constructor() {}
 
