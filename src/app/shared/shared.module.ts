@@ -9,6 +9,7 @@ import { TabsetComponent } from './components/tabset/tabset.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { RouterModule } from '@angular/router';
 import { BackwardDirective } from './directives/backward.directive';
+import { ImgDirective } from './directives/img.directive';
 
 const SHARED_COMPONENTS = [
   AvatarComponent,
@@ -21,7 +22,8 @@ const SHARED_COMPONENTS = [
 ];
 
 const SHARED_DIRECTIVES = [
-  BackwardDirective
+  BackwardDirective,
+  ImgDirective
 ];
 
 const SHARED_MODULES = [CommonModule];
