@@ -6,6 +6,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { ImageComponent } from './components/image/image.component';
 import { TabComponent } from './components/tab/tab.component';
 import { TabsetComponent } from './components/tabset/tabset.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 const SHARED_COMPONENTS = [
   AvatarComponent,
@@ -13,14 +14,15 @@ const SHARED_COMPONENTS = [
   GalleryComponent,
   ImageComponent,
   TabComponent,
-  TabsetComponent
+  TabsetComponent,
+  SpinnerComponent
 ];
 
 const SHARED_MODULES = [CommonModule];
 
 @NgModule({
   declarations: [
-    ...SHARED_COMPONENTS
+    ...SHARED_COMPONENTS,
   ],
   imports: [
     ...SHARED_MODULES

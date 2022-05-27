@@ -5,7 +5,7 @@
   --primary: #{$primary};
   --on-primary: #{$onPrimary};
 
-  --bg-color: #{bgColor};
+  --bg-color: #{$bgColor};
 
   --shadow: #{$shadow};
 }
