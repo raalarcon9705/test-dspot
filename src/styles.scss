@@ -71,3 +71,19 @@ hr {
   border-top: 1px solid rgba(177, 185, 219, 0.5);
   margin: 22px 0;
 }
+
+.btn-back,
+.btn-close {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  border: none;
+}
+
+.btn-back {
+  background-color: #FFFFFF;
+}
+
+.btn-close {
+  background-color: rgba(255, 255, 255, 0.1);
+}

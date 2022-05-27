@@ -6,5 +6,12 @@
 
 <div class="selected-image" *ngIf="selected">
   <img [src]="selected" alt="">
-  <button class="btn-close" (click)="onClose()">×</button>
+  <button class="btn-close" (click)="onClose()">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="7.19678" y="16.1924" width="13" height="2" rx="1" transform="rotate(-45 7.19678 16.1924)" fill="white"/>
+      <rect x="7.19678" y="16.1924" width="13" height="2" rx="1" transform="rotate(-45 7.19678 16.1924)" fill="white"/>
+      <rect x="8.61099" y="7" width="13" height="2" rx="1" transform="rotate(45 8.61099 7)" fill="white"/>
+      <rect x="8.61099" y="7" width="13" height="2" rx="1" transform="rotate(45 8.61099 7)" fill="white"/>
+    </svg>
+  </button>
 </div>

@@ -2,6 +2,7 @@
   display: block;
   background: rgba(255, 255, 255, 0.5);
   padding: 60px;
+  position: relative;
 }
 
 .title {
@@ -34,4 +35,10 @@
   display: grid;
   grid-template-columns: 50% 50%;
   padding: 10px 0;
+}
+
+.btn-back {
+  position: absolute;
+  left: -94px;
+  top: 0;
 }
