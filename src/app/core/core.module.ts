@@ -1,18 +1,16 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { JwtInterceptor } from '../interceptors/jwt.interceptor';
+import { HttpClientModule } from '@angular/common/http';
+import { ErrorModule } from './error/error.module';
+import { AuthenticationModule } from './authentication/authentication.module';
 
 @NgModule({
   declarations: [],
   imports: [
     HttpClientModule,
+    ErrorModule,
+    AuthenticationModule
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: JwtInterceptor,
-      multi: true
-    }
   ]
 })
 export class CoreModule { }
