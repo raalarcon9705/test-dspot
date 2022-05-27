@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { UsersStoreService } from 'src/app/store/users';
 
@@ -12,15 +13,16 @@ export class UserDetailViewComponent implements OnInit {
 
   constructor(
     private _usersStoreService: UsersStoreService,
+    private _title: Title,
     private _route: ActivatedRoute
   ) {}
 
   ngOnInit() {
-    this.loadUserDetails();
+    this._setMetadata();
   }
 
-  loadUserDetails() {
-    const id = this._route.snapshot.paramMap.get('id') || '';
-    this._usersStoreService.loadUser(6);
+
+  private _setMetadata() {
+    this._title.setTitle(this._route.snapshot.data['metaData'].title)
   }
 }

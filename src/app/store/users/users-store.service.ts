@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 
 import * as UsersSelectors from './users.selectors';
 import * as UsersActions from './users.actions';
-import { User } from 'src/app/interface/user';
+import { User } from 'src/app/interfaces/user';
 import { Observable } from 'rxjs';
 
 @Injectable({
